@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,12 +15,49 @@
             <a href="register.html">Register</a>
         </nav>
     </header>
-    <main>
+    <main class="container">
         <h2>Register a new pet</h2>
+        <div>
+            <div class="mb-3">
+                <label>Name:</label>
+                <input class="form-control" type="text" id="txtName" />
+            </div>
+            <div class="mb-3">
+                <label>Age:</label>
+                <input class="form-control" type="number" id="txtAge" min="0"/>
+            </div>
+            <div class="mb-3">
+                <label>Gender:</label>
+                <select class="form-control" id="txtGender">
+                    <option value=""disabled selected>-- Select a Gender --</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label>Breed</label>
+                <input class="form-control" type="text" id="txtBreed"/>
+            </div>
+            <div class="mb-3">
+                <label>Service</label>
+                <input class="form-control" type="text" id="txtService"/>
+            </div>
+            <div class="mb-3">
+                <label>Type</label>
+                <select class="form-control" id="txtType">
+                    <option value=""disabled selected>-- Select a Pet --</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                </select>       
+            </div>
+            <div>
+                <button class="btn btn-primary" onclick="register()">Register</button>
+            </div>
+        </div>
+    <div id="info">
+        <p>Total Pets: 3</p>
+    </div>    
     </main>
-    <p id="petcounter"></p>
-    <h3>The list of our pets</h3>
-    <ul id="list"></ul>
     <script src="./scripts/register.js"></script>
 </body>
 </html>
