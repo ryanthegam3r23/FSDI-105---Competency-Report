@@ -19,16 +19,37 @@ function Pet(name,age,gender,breed,service,type){
 
 function register(){
     let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputType.value);
-    pets.push(newPet);
-    console.log(newPet);
-    alert("The registration was successful!!!")
-    displayInfo();
-    clearForm();
+    if(isValid(newPet)){
+        pets.push(newPet)
+        displayInfo();
+        clearForm();
+        displayPets();
+    }else{
+        alert("Please fill out all the fields")
+    }
 }
 
-function displayInfo(){
-    document.getElementById("info").innerHTML=`<p>Total of pets: ${pets.length}</p>`
+function isValid(aPet){
+    let validation = true;
+
+    if(aPet.name === ""){
+        validation=false;
+    }
+
+    if(aPet.gender === ""){
+        validation=false;
+    }
+
+    return validation;
 }
+
+function deletePet(petIndex){
+    console.log("Delete pet" + petIndex);
+    document.getElementById(petIndex).remove();
+    pets.splice(petIndex, 1);
+    displayPets();
+}
+
 function clearForm(){
     let inputName = document.getElementById("txtName").value=""
     let inputAge = document.getElementById("txtAge").value=""
@@ -41,12 +62,12 @@ function clearForm(){
 
 function init(){
     //create objs
-    let pet1 = new Pet("Scooby",99,"Male","Corgi","Grooming","Dog");
-    let pet2 = new Pet("Buddy",43,"Female","Retriever","Grooming","Dog");
-    let pet3 = new Pet("Skylar",32,"Female","Pug","Grooming","Dog");
+    let pet1 = new Pet("Scooby",99,"Male","Corgi","Grooming","Credit");
+    let pet2 = new Pet("Buddy",43,"Female","Retriever","Grooming","Debit");
+    let pet3 = new Pet("Skylar",32,"Female","Pug","Grooming","Cash");
     pets.push(pet1,pet2,pet3);
     console.log(pets);
-
+    displayPets();
     displayInfo();
 }
 window.onload=init; //render the HTML

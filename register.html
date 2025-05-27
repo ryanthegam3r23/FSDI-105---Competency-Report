@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/styles.css">
     <title>Document</title>
 </head>
 <body>
     <header>
-        <h1>The Fashion Pet</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="register.html">Register</a>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-gradient">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">The Fashion Pet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/index.html">Home</a>
+                <a class="nav-link" href="/services.html">Services</a>
+                <a class="nav-link" href="/register.html">Register</a>
+            </div>
+            </div>
+            </div>
         </nav>
     </header>
-    <main class="container">
+    <main class="container mt-4">
         <h2>Register a new pet</h2>
         <div>
             <div class="mb-3">
@@ -43,11 +53,12 @@
                 <input class="form-control" type="text" id="txtService"/>
             </div>
             <div class="mb-3">
-                <label>Type</label>
+                <label> Payment Type</label>
                 <select class="form-control" id="txtType">
-                    <option value=""disabled selected>-- Select a Pet --</option>
-                    <option value="Dog">Dog</option>
-                    <option value="Cat">Cat</option>
+                    <option value=""disabled selected>-- Select a Payment --</option>
+                    <option value="Credit">Credit</option>
+                    <option value="Debit">Debit</option>
+                    <option value="Cash">Cash</option>
                 </select>       
             </div>
             <div>
@@ -55,9 +66,33 @@
             </div>
         </div>
     <div id="info">
-        <p>Total Pets: 3</p>
-    </div>    
+        <p></p>
+    </div>
+    
+        <div>
+            <h2>Registered Pets</h2>
+            <div class="container row">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Breed</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Payment Type</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="petList">
+                        <!-- Here the rows are displayed-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </main>
+
+    <script src="./scripts/display.js"></script>
     <script src="./scripts/register.js"></script>
 </body>
 </html>
