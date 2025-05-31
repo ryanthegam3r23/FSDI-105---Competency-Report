@@ -4,49 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/bootstrap.css">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <title>Services</title>
+    <title>Document</title>
 </head>
 <body>
-<header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-gradient">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">The Fashion Pet</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" href="/index.html">Home</a>
-                <a class="nav-link" href="/services.html">Services</a>
-                <a class="nav-link" href="/register.html">Register</a>
+    
+    <h1>Services</h1>
+
+    <main class="container">
+        <h2>Register a new service</h2>
+        <div class="container">
+            <div class="mb-3">
+                <label>Title</label>
+                <input class="form-control" type="text" id="txtTitle">
+                <small id="titleRequirementText">This field is required</small>
             </div>
+            <div class="mb-3">
+                <label>Price:</label>
+                <input class="form-control" type="number" id="txtPrice">
+                <small id="priceRequirementText">This field is required</small>
             </div>
+            <div>
+                <button class="btn btn-primary" id="btnRegister">Register</button>
             </div>
-        </nav>
-        <div class="my-auto p-5"> 
-            <h1 class="container text-center">Services</h1>
-        </div>
-    </header>
-    <main class="container-md">
-        <div>
-            <h2>Daily Dog Walking</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus id voluptas voluptatibus corporis animi ipsam commodi modi, quas cum dolorem voluptates velit deleniti sapiente autem nobis omnis reprehenderit? Voluptate, temporibus? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt pariatur voluptatem libero consectetur et sed similique, accusamus vitae corrupti architecto aperiam reiciendis saepe atque tempore iure incidunt nemo eveniet dignissimos!</p>
-        </div>
-        <div>
-            <h2>Vacation Care</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ex illum magni quod, ad iure tempore laboriosam quaerat earum modi ipsa quidem dolor. Fuga, eos optio nihil blanditiis repellat aliquid? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora vero harum blanditiis saepe fuga asperiores. Quis voluptatem maxime doloremque dolorum. Laboriosam debitis placeat enim dicta inventore, consequuntur laborum possimus pariatur.</p>
-        </div>
-        <div>
-            <h2>Overnight Care</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta suscipit consequatur vel, quos quibusdam quis cum atque et doloremque enim sit obcaecati esse aut! Enim ratione magni error provident unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam officia quod tempora animi eligendi, a iusto facere tenetur praesentium ducimus vel! Cum voluptatibus magni recusandae modi ducimus, nobis accusantium nostrum.</p>
-        </div>
-        <div class="my-auto p-5">
-        <div class="container text-center">
-            <h1>Register Here Today</h1>
-            <a href="register.html" class="btn btn-primary">Get Started</a>
-        </div>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="./scripts/services.js"></script>
+    <script src="/scripts/storeManager.js"></script>
 </body>
 </html>
