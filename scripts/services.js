@@ -14,7 +14,10 @@ function register(){
     if(isValid(newService)){
         save(newService);
     }
-}
+    $("#txtTitle").val("");
+    $("#txtPrice").val("");
+
+}   
 
 //validation
 
@@ -38,6 +41,7 @@ function isValid(service){
 
     return isValidTitle && isValidPrice;
 }
+
 
 //init()
 function init(){
