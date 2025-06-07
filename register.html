@@ -52,17 +52,10 @@
                 <input class="form-control" type="text" id="txtBreed"/>
             </div>
             <div class="mb-3">
-                <label>Service</label>
-                <input class="form-control" type="text" id="txtService"/>
-            </div>
-            <div class="mb-3">
-                <label> Payment Type</label>
-                <select class="form-control" id="txtType">
-                    <option value=""disabled selected>-- Select a Payment --</option>
-                    <option value="Credit">Credit</option>
-                    <option value="Debit">Debit</option>
-                    <option value="Cash">Cash</option>
-                </select>       
+                <label>Service:</label>
+                <select class="form-control" id="txtService">
+                    <option value=""disabled selected>-- Select a Service --</option>
+                </select>
             </div>
             <div>
                 <button class="btn btn-primary" onclick="register()">Register</button>
@@ -83,7 +76,6 @@
                             <th scope="col">Gender</th>
                             <th scope="col">Breed</th>
                             <th scope="col">Service</th>
-                            <th scope="col">Payment Type</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -97,5 +89,7 @@
 
     <script src="./scripts/display.js"></script>
     <script src="./scripts/register.js"></script>
+    <script src="/scripts/storeManager.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </body>
 </html>

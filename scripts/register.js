@@ -5,20 +5,18 @@ let inputAge = document.getElementById("txtAge");
 let inputGender = document.getElementById("txtGender");
 let inputBreed = document.getElementById("txtBreed");
 let inputService= document.getElementById("txtService")
-let inputType= document.getElementById("txtType")
 
 //creating the obj constructer
-function Pet(name,age,gender,breed,service,type){
+function Pet(name,age,gender,breed,service){
     this.name=name;
     this.age=age;
     this.gender=gender;
     this.breed=breed;
     this.service=service;
-    this.type=type;
 }
 
 function register(){
-    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputType.value);
+    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value);
     if(isValid(newPet)){
         pets.push(newPet)
         displayInfo();
@@ -50,24 +48,42 @@ function deletePet(petIndex){
     displayPets();
 }
 
+function getServiceNames(){
+    // use the readServices()
+    let servicesList = readServices();
+    let option ="";
+    for(let i=0;i<servicesList.length;i++){
+        let service = servicesList[i];
+        console.log(service);
+        option+=`<option value="${service.title}">${service.title} </option>`;
+
+        console.log(option)
+    }
+
+    $("#txtService").append(option);
+}
+
+
+
+
 function clearForm(){
     let inputName = document.getElementById("txtName").value=""
     let inputAge = document.getElementById("txtAge").value=""
     let inputGender = document.getElementById("txtGender").value=""
     let inputBreed = document.getElementById("txtBreed").value=""
     let inputService= document.getElementById("txtService").value=""
-    let inputType= document.getElementById("txtType").value=""
 }
 
 
 function init(){
     //create objs
-    let pet1 = new Pet("Scooby",99,"Male","Corgi","Grooming","Credit");
-    let pet2 = new Pet("Buddy",43,"Female","Retriever","Grooming","Debit");
-    let pet3 = new Pet("Skylar",32,"Female","Pug","Grooming","Cash");
+    let pet1 = new Pet("Scooby",99,"Male","Corgi","Grooming",);
+    let pet2 = new Pet("Buddy",43,"Female","Retriever","Grooming");
+    let pet3 = new Pet("Skylar",32,"Female","Pug","Grooming");
     pets.push(pet1,pet2,pet3);
     console.log(pets);
     displayPets();
     displayInfo();
+    getServiceNames();
 }
 window.onload=init; //render the HTML

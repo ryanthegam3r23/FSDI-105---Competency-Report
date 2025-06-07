@@ -11,7 +11,6 @@ function displayPets(){
                 <td>${pets[i].gender}</td>
                 <td>${pets[i].breed}</td>
                 <td>${pets[i].service}</td>
-                <td>${pets[i].type}</td>
                 <td><button class="btn btn-danger btn-sm" onclick="deletePet(${i})">Delete</button></td>
             </tr>
         
